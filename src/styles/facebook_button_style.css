@@ -1,0 +1,9 @@
+#green {
+    -fx-background-color:
+        linear-gradient(#196DFF, #32B7FF),
+        radial-gradient(center 50% -40%, radius 200%, #1E93ED 45%, #637CC6 50%);
+    -fx-background-radius: 6, 5;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
+    -fx-text-fill: #FFFFFF;
+}
