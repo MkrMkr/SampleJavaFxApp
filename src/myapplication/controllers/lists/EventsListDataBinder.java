@@ -1,10 +1,14 @@
-package myapplication;
+package myapplication.controllers.lists;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import myapplication.StageFactory;
 import myapplication.models.Event;
 
 import java.io.IOException;
@@ -25,7 +29,7 @@ public class EventsListDataBinder {
 
     public EventsListDataBinder() {
         //TODO: move listCellItem.fxml to AllScenes
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("views/listviews/eventsListItem.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../views/listviews/eventsListItem.fxml"));
         fxmlLoader.setController(this);
         try {
             fxmlLoader.load();
@@ -41,5 +45,17 @@ public class EventsListDataBinder {
 
     public Node getRoot() {
         return eventListItem;
+    }
+
+    public void settingsIconClicked(MouseEvent mouseEvent) {
+
+
+        Stage window = new Stage();
+        window.initModality(Modality.APPLICATION_MODAL);
+        window.setTitle("Event actions");
+        window.setMinWidth(250);
+        Label label = new Label();
+        label.setText("jmj");
+
     }
 }

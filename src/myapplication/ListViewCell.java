@@ -1,6 +1,7 @@
 package myapplication;
 
 import javafx.scene.control.ListCell;
+import myapplication.controllers.lists.EventsListDataBinder;
 import myapplication.models.Event;
 
 /**

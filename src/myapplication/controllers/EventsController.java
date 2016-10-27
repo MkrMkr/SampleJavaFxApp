@@ -68,7 +68,10 @@ public class EventsController implements Initializable {
             }
         });
 
+    }
 
+    public void settingsIconClicked() {
 
     }
+
 }

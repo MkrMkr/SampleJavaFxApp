@@ -36,4 +36,8 @@ public class AllScenes {
             return eventsScene;
         }
     }
+
+    public static class EventActionsScreen{
+        private static final AppScene eventActionsScene = new AppScene("Event Actions","views/");
+    }
 }
