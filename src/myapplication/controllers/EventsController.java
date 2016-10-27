@@ -23,6 +23,7 @@ public class EventsController implements Initializable {
     private ListView eventsList;
     private List<Event> events = new ArrayList<Event>();
     ObservableList observableList = FXCollections.observableArrayList();
+    private List<String> strings = new ArrayList<String>();
 
     public EventsController() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/events_screen.fxml"));
@@ -32,7 +33,7 @@ public class EventsController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         Event sampleEvent = new Event.Builder()
-                .setCreator(new User(14, "https://unsplash.it/300/300?image=50", "EventUserName"))
+                .setCreator(new User(14, "https://unsplash.it/300/300?image=50", "FirstUser"))
                 .setImageUrl("ImageUe2")
                 .setName("ExtraEvent1")
                 .setAddress("South Africa")
@@ -43,7 +44,18 @@ public class EventsController implements Initializable {
                         new Attendee(new User(3168214, "https://unsplash.it/300/300?image=65", "Franek F."), true)))
                 .build();
 
+        Event sampleEvent2 = new Event.Builder()
+                .setCreator(new User(17, "https://unsplash.it/300/300?image=50", "SecondUser"))
+                .setImageUrl("ImageUrlReceivedOneToOne")
+                .setName("ReceivedOneToOneEventName")
+                .setAddress("ReceivedOneToOneEventAddress")
+                .setGooglePlaceId("GooglePlaceId")
+                .setEventTime(new Date(894655))
+                .setEventStatus(new EventStatus(true, true, false))
+                .build();
+
         events.add(sampleEvent);
+        events.add(sampleEvent2);
         observableList.setAll(events);
         eventsList.setItems(observableList);
     }
