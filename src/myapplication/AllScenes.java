@@ -37,7 +37,12 @@ public class AllScenes {
         }
     }
 
-    public static class EventActionsScreen{
-        private static final AppScene eventActionsScene = new AppScene("Event Actions","views/");
+    public static class EventActionsScreen {
+        private static final AppScene eventActionsScene = new AppScene("Event Actions",
+                "views/dialogsviews/event_actions_screen.fxml");
+
+        public static AppScene getEventActionsScene() {
+            return eventActionsScene;
+        }
     }
 }
