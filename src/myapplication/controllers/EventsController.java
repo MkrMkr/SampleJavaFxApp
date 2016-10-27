@@ -5,7 +5,10 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.util.Callback;
+import myapplication.ListViewCell;
 import myapplication.models.Attendee;
 import myapplication.models.Event;
 import myapplication.models.EventStatus;
@@ -20,7 +23,7 @@ import java.util.*;
 public class EventsController implements Initializable {
 
     @FXML
-    private ListView eventsList;
+    private ListView eventsListView;
     private List<Event> events = new ArrayList<Event>();
     ObservableList observableList = FXCollections.observableArrayList();
     private List<String> strings = new ArrayList<String>();
@@ -57,6 +60,15 @@ public class EventsController implements Initializable {
         events.add(sampleEvent);
         events.add(sampleEvent2);
         observableList.setAll(events);
-        eventsList.setItems(observableList);
+        eventsListView.setItems(observableList);
+        eventsListView.setCellFactory(new Callback<ListView, ListCell>() {
+            @Override
+            public ListCell call(ListView param) {
+                return new ListViewCell();
+            }
+        });
+
+
+
     }
 }
