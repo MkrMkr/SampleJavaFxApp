@@ -5,7 +5,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
 import javafx.stage.Stage;
-import myapplication.AllScenes;
 import myapplication.StageFactory;
 
 import java.io.IOException;

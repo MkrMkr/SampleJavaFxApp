@@ -3,7 +3,6 @@ package myapplication.controllers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
@@ -29,7 +28,6 @@ public class EventsController implements Initializable {
     private List<String> strings = new ArrayList<String>();
 
     public EventsController() {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/events_screen.fxml"));
     }
 
     @Override
