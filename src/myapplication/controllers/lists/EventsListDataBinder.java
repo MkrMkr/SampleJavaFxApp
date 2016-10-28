@@ -3,12 +3,9 @@ package myapplication.controllers.lists;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 import myapplication.StageFactory;
 import myapplication.controllers.BaseController;
 import myapplication.controllers.dialogs.EventsActionDialogController;
@@ -53,6 +50,19 @@ public class EventsListDataBinder extends BaseController {
     public void settingsIconClicked(MouseEvent mouseEvent) {
         EventsActionDialogController eventsActionDialog = new EventsActionDialogController();
         int result = eventsActionDialog.create();
+
+        switch (result) {
+            case EventsActionDialogController.DialogResults.CHEERS_AGAIN:
+                try {
+                    switchSceneTo("Add Event", "../../views/add_event_screen.fxml");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case EventsActionDialogController.DialogResults.DELETE_EVENT:
+                //TODO: delete event;
+                break;
+        }
 
         System.out.println("Dialog result:" + result);
     }

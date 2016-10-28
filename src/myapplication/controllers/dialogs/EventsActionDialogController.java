@@ -1,12 +1,8 @@
 package myapplication.controllers.dialogs;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -34,12 +30,12 @@ public class EventsActionDialogController extends BaseController {
             Button cheersAgainButton = (Button) pane.lookup("#cheersAgain");
             Button deleteEventButton = (Button) pane.lookup("#deleteEvent");
             cheersAgainButton.setOnAction(event -> {
-                result = 1;
+                result = DialogResults.CHEERS_AGAIN;
                 stage.close();
             });
 
             deleteEventButton.setOnAction(event -> {
-                result = 2;
+                result = DialogResults.DELETE_EVENT;
                 stage.close();
             });
 
@@ -49,8 +45,12 @@ public class EventsActionDialogController extends BaseController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return result;
+    }
+
+    public class DialogResults {
+        public static final int CHEERS_AGAIN = 1;
+        public static final int DELETE_EVENT = 2;
     }
 
 }
