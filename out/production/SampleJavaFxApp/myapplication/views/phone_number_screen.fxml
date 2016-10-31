@@ -5,24 +5,21 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="myapplication.controllers.PhoneNumberController">
+<?import javafx.scene.layout.*?>
+<ScrollPane fx:id="scrollPane" minHeight="650" minWidth="400" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myapplication.controllers.PhoneNumberController">
     <content>
-        <AnchorPane id="anchor" maxHeight="700" maxWidth="400" minHeight="700" minWidth="400" prefHeight="700"
-                    prefWidth="400" style="-fx-background-image: url(resources/splashscreen_bg.jpg);">
+        <AnchorPane id="anchor" fx:id="anchorPane" minHeight="650" minWidth="400" style="-fx-background-image: url(resources/splashscreen_bg.jpg);">
             <children>
-                <Button id="red" layoutX="68.0" layoutY="647.0" mnemonicParsing="false" onAction="#continueButtonClick"
-                        prefHeight="25.0" prefWidth="265.0" stylesheets="@../../styles/red_button_style.css"
-                        text="Continue"/>
-                <TextField layoutX="67.0" layoutY="535.0" prefHeight="25.0" prefWidth="266.0" promptText="Country"/>
-                <TextField layoutX="67.0" layoutY="580.0" prefHeight="25.0" prefWidth="266.0"
-                           promptText="Number without country code"/>
-                <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="137.0" layoutY="197.0" pickOnBounds="true"
-                           preserveRatio="true">
+                <Button id="red" layoutX="68.0" layoutY="647.0" mnemonicParsing="false" onAction="#continueButtonClick" prefHeight="25.0" prefWidth="265.0"
+                        stylesheets="@../../styles/red_button_style.css" text="Continue" AnchorPane.bottomAnchor="30" AnchorPane.leftAnchor="50" AnchorPane.rightAnchor="50" />
+                <TextField layoutX="26.0" layoutY="568.0" maxWidth="380.0" prefHeight="30.0" prefWidth="349.0" promptText="Country"
+                           AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0"/>
+                <TextField layoutX="27.0" layoutY="620.0" maxWidth="346.0" AnchorPane.bottomAnchor="60.0"
+                           AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0"
+                           prefHeight="25.0" prefWidth="346.0" promptText="Number without country code"/>
+                <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="137.0" layoutY="197.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../../resources/cheers_logo.png"/>
+                        <Image url="@../../resources/cheers_logo.png" />
                     </image>
                 </ImageView>
             </children>
