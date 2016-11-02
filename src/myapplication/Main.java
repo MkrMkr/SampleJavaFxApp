@@ -29,6 +29,8 @@ public class Main extends Application {
         primaryStage.setTitle(AllScenes.PhoneNumberScreen.getPhoneNumberScene().getTitle());
         Scene phoneNumberScene = new Scene(root);
 
+        primaryStage.setMinWidth(400);
+        primaryStage.setMinHeight(700);
         primaryStage.setScene(phoneNumberScene);
         primaryStage.show();
     }
