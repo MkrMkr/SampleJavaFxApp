@@ -48,7 +48,6 @@ public class PhoneNumberController extends BaseController implements Initializab
             double anchorPaneHeight = (double) newValue;
             double logoHeight = logoImageView.getFitHeight();
             logoImageView.setY((anchorPaneHeight / 2) - logoHeight);
-
         });
     }
 
