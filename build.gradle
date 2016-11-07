@@ -1,3 +1,6 @@
+apply plugin: 'java'
+apply plugin: 'javafx-gradle-plugin'
+
 task wrapper(type: Wrapper) {
     gradleVersion = '3.1'
 }
@@ -12,15 +15,6 @@ buildscript {
     }
 }
 
-apply plugin: 'java'
-
-repositories {
-    mavenLocal()
-    mavenCentral()
-}
-
-apply plugin: 'javafx-gradle-plugin'
-
 jfx {
     verbose = true;
     // minimal requirement for jfxJar-task
@@ -29,5 +23,3 @@ jfx {
     // minimal requirement for jfxNative-task
     vendor = 'YourName'
 }
-
-//fsdf
