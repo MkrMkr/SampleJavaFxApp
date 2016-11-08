@@ -10,6 +10,9 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         StageFactory factory = StageFactory.INSTANCE;
         factory.setCurrentStage(primaryStage);
+        primaryStage.setTitle(AllScenes.PhoneNumberScreen.getPhoneNumberScene().getTitle());
+        primaryStage.setWidth(400);
+        primaryStage.setHeight(700);
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource(AllScenes
                 .PhoneNumberScreen
@@ -17,11 +20,8 @@ public class Main extends Application {
                 .getPath()));
         Parent root = loader.load();
 
-        primaryStage.setTitle(AllScenes.PhoneNumberScreen.getPhoneNumberScene().getTitle());
         Scene phoneNumberScene = new Scene(root);
 
-        primaryStage.setMinWidth(400);
-        primaryStage.setMinHeight(700);
         primaryStage.setScene(phoneNumberScene);
         primaryStage.show();
     }

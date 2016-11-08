@@ -23,3 +23,11 @@ jfx {
     // minimal requirement for jfxNative-task
     vendor = 'YourName'
 }
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+}

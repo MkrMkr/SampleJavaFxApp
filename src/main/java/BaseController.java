@@ -2,6 +2,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -21,7 +23,7 @@ public class BaseController {
         StageFactory stageFactory = StageFactory.INSTANCE;
         stageFactory.getCurrentStage().setTitle(sceneStageTitle);
 
-        ScrollPane root = null;
+        Region root = null;
         root = FXMLLoader.load(getClass().getResource(scenePath));
         Scene scene = new Scene(root);
         stageFactory.getCurrentStage().setScene(scene);

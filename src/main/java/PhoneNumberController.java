@@ -26,8 +26,6 @@ public class PhoneNumberController extends BaseController implements Initializab
 
         anchorPane.prefWidthProperty().bind(currentStage.widthProperty());
         anchorPane.prefHeightProperty().bind(currentStage.heightProperty());
-        anchorPane.prefWidthProperty().bind(currentStage.widthProperty());
-        anchorPane.prefHeightProperty().bind(currentStage.heightProperty());
 
         anchorPane.widthProperty().addListener((observable, oldValue, newValue) -> {
             double halfOfAnchorPaneWidth = (Double) newValue / 2;
