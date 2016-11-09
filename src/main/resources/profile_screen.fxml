@@ -7,14 +7,15 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="anchor" fx:id="anchorPane" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ProfileController">
+<AnchorPane id="anchor" fx:id="anchorPane" prefHeight="668.0" prefWidth="377.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ProfileController">
     <children>
-        <Rectangle fx:id="toolbar" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="65.0" layoutX="-7.0" layoutY="-5.0"/>
-        <ImageView fx:id="profileBackground" fitHeight="170" layoutX="-1.0" layoutY="51.0" pickOnBounds="true" >
+        <Rectangle fx:id="toolbar" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="65.0" layoutX="-7.0" layoutY="-5.0" />
+        <ImageView fx:id="profileBackground" fitHeight="170" fitWidth="400.0" layoutX="-1.0" layoutY="51.0" pickOnBounds="true">
             <image>
                 <Image url="@bg_photo.jpg" />
             </image>
@@ -24,13 +25,12 @@
         <Button id="red" layoutX="41.0" layoutY="638.0" mnemonicParsing="false" onAction="#continueButtonClick" prefHeight="30.0" prefWidth="319.0" stylesheets="@red_button_style.css" text="Continue" />
         <CheckBox layoutX="50.0" layoutY="515.0" mnemonicParsing="false" text="Receive notifications" />
         <StackPane layoutX="-1.0" layoutY="51.0" />
-
-        <ImageView fx:id="profileIcon" fitHeight="94.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="profileIcon" fitHeight="94.0" fitWidth="102.0" layoutX="152.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@profile_icon.png" />
             </image>
         </ImageView>
-        <Text layoutX="165.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add photo">
+        <Text fx:id="addPhotoTitle" layoutX="165.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add photo">
             <font>
                 <Font name="Calibri" size="16.0" />
             </font>

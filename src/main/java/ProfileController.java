@@ -5,6 +5,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,7 +18,6 @@ import java.util.ResourceBundle;
  */
 public class ProfileController extends BaseController implements Initializable {
 
-    public static final int BOTTOM_PROFILE_ICON_OFFSET = 175;
     public static final int PROFILE_ICON_CLIP_CIRCLE_RADIUS = 40;
     @FXML
     public Rectangle toolbar;
@@ -25,6 +25,8 @@ public class ProfileController extends BaseController implements Initializable {
     public ImageView profileBackground;
     @FXML
     public AnchorPane anchorPane;
+    @FXML
+    public Text addPhotoTitle;
     @FXML
     private ImageView profileIcon;
 
@@ -36,22 +38,31 @@ public class ProfileController extends BaseController implements Initializable {
         toolbar.widthProperty().bind(currentStage.widthProperty());
         profileBackground.fitWidthProperty().bind(currentStage.widthProperty());
 
-        Circle clipCircle = new Circle(PROFILE_ICON_CLIP_CIRCLE_RADIUS);
+        Circle circle = new Circle(45);
+        circle.setCenterX(46);
+        circle.setCenterY(45);
+        profileIcon.setClip(circle);
 
-        anchorPane.widthProperty().addListener((observable, oldValue, newValue) -> {
-            double halfOfAnchorPaneWidth = (Double) newValue / 2;
-            double profileIconWidth = profileIcon.getFitWidth();
-            double profileIconHeight = profileIcon.getFitHeight();
+        profileIcon.layoutXProperty()
+                .bind(currentStage.widthProperty().divide(2).
+                        subtract(profileIcon.getFitWidth() / 2));
+        addPhotoTitle.layoutXProperty().bind(currentStage.widthProperty().divide(2).
+                subtract(profileIcon.getFitWidth() / 2).add(15));
 
-            profileIcon.setX(halfOfAnchorPaneWidth - (profileIconWidth / 2));
-            profileIcon.setY(BOTTOM_PROFILE_ICON_OFFSET);
 
-            final double clicpCircleExtraXOffset = 5;
-            clipCircle.setCenterX(profileIcon.getX() + (profileIconWidth / 2) - clicpCircleExtraXOffset);
-            clipCircle.setCenterY(profileIcon.getY() + (profileIconHeight / 2));
-            profileIcon.setClip(clipCircle);
-            System.out.println("new Val" + newValue);
-        });
+//        anchorPane.widthProperty().addListener((observable, oldValue, newValue) -> {
+//            double halfOfAnchorPaneWidth = (Double) newValue / 2;
+//            double profileIconWidth = profileIcon.getFitWidth();
+//            double profileIconHeight = profileIcon.getFitHeight();
+//
+//            profileIcon.setX(halfOfAnchorPaneWidth - (profileIconWidth / 2));
+//
+//            final double clicpCircleExtraXOffset = 5;
+//            clipCircle.setCenterX(profileIcon.getX() + (profileIconWidth / 2) - clicpCircleExtraXOffset);
+//            clipCircle.setCenterY(profileIcon.getY() + (profileIconHeight / 2));
+//            profileIcon.setClip(clipCircle);
+//            System.out.println("new Val" + newValue);
+//        });
     }
 
     public void useMyFacebookDetails(ActionEvent actionEvent) {
