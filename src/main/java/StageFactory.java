@@ -41,7 +41,6 @@ public enum StageFactory {
         return this.currentStageProperty().get();
     }
 
-
     public ObservableList<Stage> getOpenStages() {
         return openStages;
     }

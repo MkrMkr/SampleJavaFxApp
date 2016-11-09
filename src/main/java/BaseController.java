@@ -29,20 +29,26 @@ public class BaseController {
         stageFactory.getCurrentStage().setScene(scene);
     }
 
-    protected void switchStageTo(final String newStageTitle, final String newStageScenePath) throws IOException {
+    protected void switchStageToKeepingStageSize(final String newStageTitle, final String newStageScenePath) throws IOException {
         StageFactory stageFactory = StageFactory.INSTANCE;
-        Stage profileStage = stageFactory.createStage();
-        profileStage.setTitle(newStageTitle);
+        Stage newStage = stageFactory.createStage();
+        newStage.setTitle(newStageTitle);
+
+        Stage previousStage = stageFactory.getPreviousStage();
+        double oldHeight = previousStage.getHeight();
+        double oldWidth = previousStage.getWidth();
+
+        newStage.setWidth(oldWidth);
+        newStage.setHeight(oldHeight);
+
+        previousStage.close();
+        newStage.show();
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource(newStageScenePath));
         Parent root = loader.load();
-        Scene profileScene = new Scene(root);
+        Scene newStageScene = new Scene(root);
+        newStage.setScene(newStageScene);
 
-        profileStage.setScene(profileScene);
-
-        stageFactory.getPreviousStage().close();
-
-        profileStage.show();
     }
 
     protected void openNewStage(final String newStageTitle, final String newStageScenePath) throws IOException {

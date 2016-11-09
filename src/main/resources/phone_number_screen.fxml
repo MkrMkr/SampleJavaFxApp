@@ -12,9 +12,12 @@
             xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="PhoneNumberController">
     <children>
-        <Button id="red" fx:id="continueButton" layoutX="68.0" layoutY="647.0" mnemonicParsing="false" onAction="#continueButtonClick" prefHeight="25.0" prefWidth="265.0" stylesheets="@red_button_style.css" text="Continue" AnchorPane.bottomAnchor="50" AnchorPane.leftAnchor="50" AnchorPane.rightAnchor="50" />
-        <TextField layoutX="50.0" layoutY="519.0" maxWidth="380.0" prefHeight="30.0" prefWidth="349.0" promptText="Country" AnchorPane.bottomAnchor="150" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" />
-        <TextField layoutX="50.0" layoutY="562.0" maxWidth="346.0" prefHeight="25.0" prefWidth="346.0" promptText="Number without country code" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" />
+        <Button id="red" fx:id="continueButton" layoutX="68.0" layoutY="647.0" mnemonicParsing="false" onAction="#continueButtonClick" prefHeight="25.0" prefWidth="265.0" stylesheets="@red_button_style.css" text="Continue"
+                AnchorPane.bottomAnchor="50" AnchorPane.leftAnchor="50" AnchorPane.rightAnchor="50" />
+        <TextField layoutX="50.0" layoutY="519.0" maxWidth="380.0" prefHeight="30.0" prefWidth="349.0" promptText="Country"
+                   AnchorPane.bottomAnchor="150" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" />
+        <TextField layoutX="50.0" layoutY="562.0" maxWidth="346.0" prefHeight="25.0" prefWidth="346.0" promptText="Number without country code"
+                   AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" />
         <ImageView fx:id="logoImageView" fitHeight="150.0" fitWidth="200.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@cheers_logo.png" />

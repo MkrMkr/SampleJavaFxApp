@@ -55,7 +55,7 @@ public class AccessCodeController extends BaseController implements Initializabl
     }
 
     public void goToProfileStage() throws IOException {
-        switchStageTo(AllScenes.ProfileScreen.getProfileScene().getTitle(),
+        switchStageToKeepingStageSize(AllScenes.ProfileScreen.getProfileScene().getTitle(),
                 AllScenes.ProfileScreen.getProfileScene().getPath());
     }
 }
