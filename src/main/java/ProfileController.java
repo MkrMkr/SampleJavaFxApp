@@ -68,14 +68,21 @@ public class ProfileController extends BaseController implements Initializable {
                 .divide(2)
                 .subtract(halfOfProfileIconWidth)
                 .add(addPhotoTitleOffset));
+        final double marginToAddPhoto = 15;
+        addPhotoTitle.layoutYProperty().bind(anchorPane.heightProperty()
+                .divide(12)
+                .multiply(3)
+                .add(halfOfProfileIconHeight + marginToAddPhoto));
 
         toolbar.heightProperty().bind(anchorPane.heightProperty().divide(12));
 
         profileBackground.fitHeightProperty().bind(anchorPane.heightProperty().divide(6));
         profileBackground.layoutYProperty().bind(anchorPane.heightProperty().divide(12));
 
-        
+
         enterYourNameField.translateYProperty().bind(anchorPane.heightProperty().divide(18).multiply(8));
+
+        receiveNotificationsCheckbox.translateYProperty().bind(anchorPane.heightProperty().divide(18).multiply(13));
 
         facebookButton.prefHeightProperty().bind(anchorPane.heightProperty().divide(18));
         facebookButton.translateYProperty().bind(anchorPane.heightProperty().divide(18).multiply(15));
