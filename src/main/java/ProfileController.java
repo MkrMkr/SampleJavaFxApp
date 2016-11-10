@@ -3,6 +3,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -37,6 +38,10 @@ public class ProfileController extends BaseController implements Initializable {
     @FXML
     public CheckBox receiveNotificationsCheckbox;
     @FXML
+    public Button continueButton;
+    @FXML
+    public Button facebookButton;
+    @FXML
     private ImageView profileIcon;
 
     @Override
@@ -54,12 +59,29 @@ public class ProfileController extends BaseController implements Initializable {
 
         double addPhotoTitleOffset = 10;
         double halfOfProfileIconWidth = profileIcon.getFitWidth() / 2;
+        double halfOfProfileIconHeight = profileIcon.getFitHeight() / 2;
 
         profileIcon.layoutXProperty().bind(anchorPane.widthProperty().divide(2).subtract(halfOfProfileIconWidth));
+        profileIcon.layoutYProperty().bind(anchorPane.heightProperty().divide(12).multiply(3).subtract(halfOfProfileIconHeight));
+
         addPhotoTitle.layoutXProperty().bind(anchorPane.widthProperty()
                 .divide(2)
                 .subtract(halfOfProfileIconWidth)
                 .add(addPhotoTitleOffset));
+
+        toolbar.heightProperty().bind(anchorPane.heightProperty().divide(12));
+
+        profileBackground.fitHeightProperty().bind(anchorPane.heightProperty().divide(6));
+        profileBackground.layoutYProperty().bind(anchorPane.heightProperty().divide(12));
+
+        
+        enterYourNameField.translateYProperty().bind(anchorPane.heightProperty().divide(18).multiply(8));
+
+        facebookButton.prefHeightProperty().bind(anchorPane.heightProperty().divide(18));
+        facebookButton.translateYProperty().bind(anchorPane.heightProperty().divide(18).multiply(15));
+
+        continueButton.prefHeightProperty().bind(anchorPane.heightProperty().divide(18));
+        continueButton.translateYProperty().bind(anchorPane.heightProperty().divide(18).multiply(16.5));
 
         System.out.println("java version: " + System.getProperty("java.version"));
         System.out.println("javafx.version: " + System.getProperty("javafx.version"));

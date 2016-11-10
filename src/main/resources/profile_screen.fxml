@@ -5,44 +5,41 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
 <AnchorPane id="anchor" fx:id="anchorPane" prefHeight="668.0" prefWidth="377.0" style="-fx-background-color: white;"
             xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="ProfileController">
     <children>
         <Rectangle fx:id="toolbar" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="65.0" layoutX="-7.0"
                    layoutY="-5.0"/>
-        <ImageView fx:id="profileBackground" fitHeight="170" fitWidth="400.0" layoutX="-1.0" layoutY="51.0"
+        <ImageView fx:id="profileBackground" fitHeight="172.0" fitWidth="377.0" layoutY="51.0" managed="false"
                    pickOnBounds="true">
             <image>
                 <Image url="@bg_photo.jpg"/>
             </image>
         </ImageView>
-        <Button id="green" layoutX="40.0" layoutY="597.0" mnemonicParsing="false" onAction="#useMyFacebookDetails"
-                prefHeight="30.0" prefWidth="320.0" stylesheets="@facebook_button_style.css"
-                AnchorPane.leftAnchor="30" AnchorPane.rightAnchor="30"
-                text="Use my facebook details"/>
-        <TextField fx:id="enterYourNameField" layoutX="42.0" layoutY="432.0" prefHeight="25.0" prefWidth="321.0"
+        <TextField fx:id="enterYourNameField" prefHeight="25.0" prefWidth="321.0"
                    promptText="Enter your name" AnchorPane.leftAnchor="30" AnchorPane.rightAnchor="30"/>
-        <Button id="red" layoutX="41.0" layoutY="638.0" mnemonicParsing="false" onAction="#continueButtonClick"
-                prefHeight="30.0" prefWidth="319.0" stylesheets="@red_button_style.css" text="Continue"
-                AnchorPane.leftAnchor="30" AnchorPane.rightAnchor="30"/>
-        <CheckBox fx:id="receiveNotificationsCheckbox" AnchorPane.rightAnchor="30" AnchorPane.leftAnchor="30"
-                  layoutX="50.0" layoutY="515.0" mnemonicParsing="false"
-                  text="Receive notifications"/>
+        <Button fx:id="facebookButton" id="green" mnemonicParsing="false"
+                AnchorPane.leftAnchor="30" AnchorPane.rightAnchor="30"
+                onAction="#useMyFacebookDetails" prefHeight="30.0" prefWidth="320.0"
+                stylesheets="@facebook_button_style.css" text="Use my facebook details"/>
+        <Button id="red" fx:id="continueButton" mnemonicParsing="false" onAction="#continueButtonClick"
+                prefHeight="30.0" prefWidth="319.0" stylesheets="@red_button_style.css"
+                text="Continue" AnchorPane.leftAnchor="30" AnchorPane.rightAnchor="30"/>
+        <CheckBox fx:id="receiveNotificationsCheckbox" mnemonicParsing="false"
+                  text="Receive notifications" AnchorPane.leftAnchor="30" AnchorPane.rightAnchor="30"/>
         <StackPane layoutX="-1.0" layoutY="51.0"/>
-        <ImageView fx:id="profileIcon" managed="false" fitHeight="94.0" fitWidth="102.0" layoutX="154.0" layoutY="174.0"
+        <ImageView fx:id="profileIcon" fitHeight="94.0" fitWidth="102.0" layoutX="142.0" layoutY="174.0" managed="false"
                    pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@profile_icon.png"/>
             </image>
         </ImageView>
-        <Text fx:id="addPhotoTitle" managed="false" layoutX="165.0" layoutY="286.0" strokeType="OUTSIDE"
+        <Text fx:id="addPhotoTitle" layoutX="153.0" layoutY="284.0" managed="false" strokeType="OUTSIDE"
               strokeWidth="0.0" text="Add photo">
             <font>
                 <Font name="Calibri" size="16.0"/>
