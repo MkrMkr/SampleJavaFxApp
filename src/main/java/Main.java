@@ -13,6 +13,8 @@ public class Main extends Application {
         primaryStage.setTitle(AllScenes.PhoneNumberScreen.getPhoneNumberScene().getTitle());
         primaryStage.setWidth(400);
         primaryStage.setHeight(700);
+        primaryStage.setMinWidth(400);
+        primaryStage.setMinHeight(700);
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource(AllScenes
                 .PhoneNumberScreen

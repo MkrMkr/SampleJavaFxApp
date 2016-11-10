@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <AnchorPane id="anchor" fx:id="anchorPane"
             style="-fx-background-image: url(splashscreen_bg.jpg); -fx-background-size: 100% 100%;"
-            xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="AccessCodeController">
     <children>
         <Button fx:id="enterCheersButton" id="red" layoutX="68.0" layoutY="605.0" mnemonicParsing="false"

@@ -9,7 +9,7 @@
 <AnchorPane id="anchor"
             fx:id="anchorPane"
             style="-fx-background-image: url(splashscreen_bg.jpg); -fx-background-size: 100% 100%;"
-            xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="PhoneNumberController">
     <children>
         <Button id="red" fx:id="continueButton" layoutX="68.0" layoutY="647.0" mnemonicParsing="false" onAction="#continueButtonClick" prefHeight="25.0" prefWidth="265.0" stylesheets="@red_button_style.css" text="Continue"
