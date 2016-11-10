@@ -37,9 +37,13 @@ public class BaseController {
         Stage previousStage = stageFactory.getPreviousStage();
         double oldHeight = previousStage.getHeight();
         double oldWidth = previousStage.getWidth();
+        double oldMinWidth = previousStage.getMinWidth();
+        double oldMinHeight = previousStage.getMinHeight();
 
         newStage.setWidth(oldWidth);
         newStage.setHeight(oldHeight);
+        newStage.setMinWidth(oldMinWidth);
+        newStage.setMinHeight(oldMinHeight);
 
         previousStage.close();
         newStage.show();
@@ -48,7 +52,6 @@ public class BaseController {
         Parent root = loader.load();
         Scene newStageScene = new Scene(root);
         newStage.setScene(newStageScene);
-
     }
 
     protected void openNewStage(final String newStageTitle, final String newStageScenePath) throws IOException {

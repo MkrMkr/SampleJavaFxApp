@@ -61,8 +61,13 @@ public class ProfileController extends BaseController implements Initializable {
         double halfOfProfileIconWidth = profileIcon.getFitWidth() / 2;
         double halfOfProfileIconHeight = profileIcon.getFitHeight() / 2;
 
-        profileIcon.layoutXProperty().bind(anchorPane.widthProperty().divide(2).subtract(halfOfProfileIconWidth));
-        profileIcon.layoutYProperty().bind(anchorPane.heightProperty().divide(12).multiply(3).subtract(halfOfProfileIconHeight));
+        profileIcon.layoutXProperty().bind(anchorPane.widthProperty()
+                .divide(2)
+                .subtract(halfOfProfileIconWidth));
+        profileIcon.layoutYProperty().bind(anchorPane.heightProperty()
+                .divide(12)
+                .multiply(3)
+                .subtract(halfOfProfileIconHeight));
 
         addPhotoTitle.layoutXProperty().bind(anchorPane.widthProperty()
                 .divide(2)
@@ -79,6 +84,7 @@ public class ProfileController extends BaseController implements Initializable {
         profileBackground.fitHeightProperty().bind(anchorPane.heightProperty().divide(6));
         profileBackground.layoutYProperty().bind(anchorPane.heightProperty().divide(12));
 
+        //TODO: resize circle and photo
 
         enterYourNameField.translateYProperty().bind(anchorPane.heightProperty().divide(18).multiply(8));
 
